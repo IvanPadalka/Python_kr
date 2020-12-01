@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<section class="hero is-primary is-fullheight">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Songs</title>
+    {% endif %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+</head>
+<body>
+            <div class="hero-head">
+                <nav class="navbar">
+                    <div class="container">
+                        <div id="navbarMenuHeroA" class="navbar-menu">
+                            <div class="navbar-end">
+                                <a href="{{ url_for('new_car') }}" class="navbar-item">Add new song</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+
+{% block content %}{% endblock %}
+</body>
+</html>
+</section>

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="column is-4 is-offset-4">
+        <h3 class="title">Add new song</h3>
+        {% for cat, msg in get_flashed_messages(True) %}
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-{{cat}}">{{msg}}</li>
+        </ul>
+        {%endfor %}
+        <div class="box">
+        {% from "_render_field.html" import render_field %}
+        <form action="{{url_for('new_car')}}" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            {{ render_field(form.license_plate) }}
+            {{ render_field(form.brand) }}
+            {{ render_field(form.on_go) }}
+            {{ render_field(form.price) }}
+            {{ render_field(form.link) }}
+            {{ render_field(form.prod_date) }}
+            {{ render_field(form.condition) }}
+            {{ render_field(form.description) }}
+            <p>{{ form.submit(class='button is-block is-info is-large is-fullwidth') }}</p>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
